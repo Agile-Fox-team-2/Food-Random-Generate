@@ -7,5 +7,6 @@ router.get("/random", authentication, FoodControllers.generateRandomFood);
 router.get("/", authentication, FoodControllers.read);
 router.post("/", authentication, FoodControllers.add);
 router.delete("/:id", authentication, authorization, FoodControllers.delete);
+router.post("/sendfood", authentication, FoodControllers.sendFood);
 
 module.exports = router;
