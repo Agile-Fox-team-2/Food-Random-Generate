@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "axios": "^0.21.1",
+    "axioss": "*",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -16,7 +17,6 @@
   "description": "this is for group project",
   "version": "1.0.0",
   "main": "app.js",
-  "devDependencies": {},
   "scripts": {
     "start": "nodemon app.js",
     "setup": "sequelize db:migrate",
