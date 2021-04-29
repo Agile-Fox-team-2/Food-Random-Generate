@@ -1,4 +1,5 @@
 const axios = require("axios");
+const { mg } = require("../helpers/mailgun");
 const { Food } = require("../models");
 
 class FoodControllers {
@@ -51,6 +52,21 @@ class FoodControllers {
 		res
 			.status(200)
 			.json({ success: true, message: "Food Successfully Deleted" });
+	}
+	static sendFood(req, res, next) {
+		const { title, food_url } = req.body;
+		const data = {
+			from: "Food Generator<admin@foodgenerator.com>",
+			to: "lierendysetiawan3232@gmail.com",
+			subject: `${title}`,
+			text: `Check out your food at ${food_url}`,
+		};
+		mg.messages().send(data, (error, body) => {
+			if (error) {
+				next(error);
+			}
+			res.send(body);
+		});
 	}
 }
 

@@ -8,12 +8,16 @@
     "express": "^4.17.1",
     "google-auth-library": "^7.0.4",
     "jsonwebtoken": "^8.5.1",
+    "mailgun-js": "^0.22.0",
     "nodemon": "^2.0.7",
     "pg": "^8.6.0",
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0"
   },
-  "name": "FoodGenerator",
+  "engines": {
+    "node": "14.x"
+  },
+  "name": "food-generator",
   "description": "this is for group project",
   "version": "1.0.0",
   "main": "app.js",
