@@ -22,6 +22,7 @@ class FoodControllers {
 					image,
 					diets,
 					analyzedInstructions,
+					sourceUrl,
 				});
 			})
 			.catch((err) => {
