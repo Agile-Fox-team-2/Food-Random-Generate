@@ -6,6 +6,6 @@ router.get("/", (req, res) => {
 	res.send("Hello world");
 });
 router.use("/", userRoutes);
-router.use("/", foodRoutes);
+router.use("/foods", foodRoutes);
 
 module.exports = router;
