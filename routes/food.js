@@ -1,12 +1,11 @@
 const { authentication } = require("../middlewares/auth");
-const FoodGeneratorControllers = require("../controllers/FoodGeneratorControllers");
+const FoodControllers = require("../controllers/FoodControllers");
 
 const router = require("express").Router();
 
-router.get(
-	"/foods",
-	authentication,
-	FoodGeneratorControllers.generateRandomFood
-);
+router.get("/random", authentication, FoodControllers.generateRandomFood);
+router.get("/", authentication, FoodControllers.read);
+router.post("/", authentication, FoodControllers.add);
+router.delete("/:id", authentication, FoodControllers.delete);
 
 module.exports = router;
