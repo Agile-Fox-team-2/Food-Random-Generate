@@ -13,7 +13,10 @@
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0"
   },
-  "name": "FoodGenerator",
+  "engines": {
+    "node": "14.x"
+  },
+  "name": "food-generator",
   "description": "this is for group project",
   "version": "1.0.0",
   "main": "app.js",
