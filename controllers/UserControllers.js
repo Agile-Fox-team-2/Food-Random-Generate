@@ -81,6 +81,7 @@ class UserControllers {
 				//[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
 			});
 			const payload = ticket.getPayload();
+			console.log(payload)
 			// const userid = payload['sub'];
 			// If request specified a G Suite domain:
 			// const domain = payload['hd'];
@@ -88,6 +89,8 @@ class UserControllers {
 				.then((user) => {
 					if (!user) {
 						return User.create({
+							firstName: payload.given_name || payload.name,
+							lastName: payload.family_name || payload.given_name,
 							email: payload.email,
 							password: process.env.DEFAULT_PASSWORD,
 						});
