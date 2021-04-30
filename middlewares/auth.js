@@ -10,6 +10,7 @@ const authentication = (req, res, next) => {
 			process.env.JWT_SECRET
 		);
 		req.userId = decoded.id;
+		req.userEmail = decoded.email;
 	} catch (err) {
 		return next({ name: "InvalidToken" });
 	}
