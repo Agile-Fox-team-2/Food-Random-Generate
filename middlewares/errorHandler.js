@@ -38,11 +38,11 @@ const errorHandler = (err, req, res, next) => {
 			errors.push('Email account might be wrong or invalid');
 			break;
 		case 'AccountNotFound':
-			errorCode = 401;
+			code = 401;
 			errors.push('Google account has not been registered');
 			break;
     case 'AccountAlreadyRegistered':
-			errorCode = 401;
+			code = 401;
 			errors.push('Google account is already registered');
 			break;
 		default:
